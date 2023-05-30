@@ -1,14 +1,22 @@
-import { volumes } from "../lib/data.js";
 import Link from "next/link";
+import styled from "styled-components";
 
 export default function Volumes() {
   return (
-    <ul>
-      {volumes.map((volume) => (
-        <li key={volume.slug} id={volume.slug}>
-          <Link href={`/volumes/${volume.slug}`}>{volume.title}</Link>
-        </li>
-      ))}
-    </ul>
+    <BoxContainer>
+      <Link href="/volumes">To all volumes</Link>
+    </BoxContainer>
   );
 }
+
+const BoxContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 3rem;
+  position: relative;
+  width: 390px;
+  height: 844px;
+  background: var(--color-clouds);
+`;
